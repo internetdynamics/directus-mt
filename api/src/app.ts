@@ -41,6 +41,13 @@ import usersRouter from './controllers/users.js';
 import utilsRouter from './controllers/utils.js';
 import versionsRouter from './controllers/versions.js';
 import webhooksRouter from './controllers/webhooks.js';
+
+import groupsRouter from './controllers/groups.js';
+import redirectsRouter from './controllers/redirects.js';
+import mediaUsageRouter from './controllers/media-usage.js';
+import dbRouter from './controllers/db.js';
+import testRouter from './controllers/test.js';
+
 import {
 	isInstalled,
 	validateDatabaseConnection,
@@ -304,6 +311,13 @@ export default async function createApp(): Promise<express.Application> {
 	app.use('/utils', utilsRouter);
 	app.use('/versions', versionsRouter);
 	app.use('/webhooks', webhooksRouter);
+
+	// Custom Controllers in Directus-MT (multi-tenant)
+	app.use('/groups', groupsRouter);
+	app.use('/redirect', redirectsRouter);
+	app.use('/media-usage', mediaUsageRouter);
+	app.use('/db', dbRouter);
+	app.use('/test', testRouter);
 
 	// Register custom endpoints
 	await emitter.emitInit('routes.custom.before', { app });
