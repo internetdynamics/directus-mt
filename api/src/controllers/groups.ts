@@ -52,7 +52,7 @@ const readMyGroups = asyncHandler(async (req, res, next) => {
 			if (isAdmin || user.sysRoleId === 1) {
 				groups = await database
 				.select(
-					'group.id', 'group.groupname', 'group.groupDisplayName', 'group.user_created',
+					'group.id', 'group.groupname', 'group.groupDisplayName', 'group.groupDescription', 'group.user_created',
 					'group_memb.groupRoleId', 'group_memb.lastAccessedDate',
 				)
 				.from('group')
@@ -62,7 +62,7 @@ const readMyGroups = asyncHandler(async (req, res, next) => {
 			else {
 				groups = await database
 				.select(
-					'group.id', 'group.groupname', 'group.groupDisplayName', 'group.user_created',
+					'group.id', 'group.groupname', 'group.groupDisplayName', 'group.groupDescription', 'group.user_created',
 					'group_memb.groupRoleId', 'group_memb.lastAccessedDate',
 				)
 				.from('group')
@@ -92,7 +92,7 @@ const readMyGroups = asyncHandler(async (req, res, next) => {
 	}
 	else {
 		groups = await database
-		.select('group.id', 'group.groupname', 'group.groupDisplayName')
+		.select('group.id', 'group.groupname', 'group.groupDisplayName', 'group.groupDescription')
 		.from('group')
 		.where({ 'group.isPublic': true })
 		.orderBy("group.id");
