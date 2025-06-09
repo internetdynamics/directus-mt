@@ -1,7 +1,7 @@
 import express from 'express';
 // import { Query } from '@directus/shared/types';
 // import { respond } from '../middleware/respond';
-// import { Knex } from 'knex';
+// import type { Knex } from 'knex';
 import getDatabase from '../database/index.js';
 import asyncHandler from '../utils/async-handler.js';
 // import { getUserAuth } from '../utils/get-user-auth';

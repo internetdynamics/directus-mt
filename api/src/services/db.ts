@@ -13,7 +13,7 @@ import type { AbstractServiceOptions } from '../types/index.js';
 // import { appendFile, createReadStream } from 'fs-extra';
 // import { parse as toXML } from 'js2xmlparser';
 // import { Parser as CSVParser, transforms as CSVTransforms } from 'json2csv';
-import { Knex } from 'knex';
+import type { Knex } from 'knex';
 // import { set, transform } from 'lodash';
 // import StreamArray from 'stream-json/streamers/StreamArray';
 // import stripBomStream from 'strip-bom-stream';

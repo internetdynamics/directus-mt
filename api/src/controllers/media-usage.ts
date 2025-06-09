@@ -6,7 +6,7 @@ import express from 'express';
 // import collectionExists from '../middleware/collection-exists';
 import { respond } from '../middleware/respond.js';
 // import { validateBatch } from '../middleware/validate-batch';
-import { Knex } from 'knex';
+import type { Knex } from 'knex';
 import getDatabase from '../database/index.js';
 // import { ItemsService, MetaService } from '../services';
 // import { PrimaryKey } from '../types';
